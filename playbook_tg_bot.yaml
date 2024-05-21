@@ -36,8 +36,8 @@
           ALTER USER "{{ hostvars[inventory_hostname]['DB_USER'] }}" WITH PASSWORD '{{ hostvars[inventory_hostname]['DB_PASSWORD'] }}';
           DROP ROLE IF EXISTS {{ hostvars[inventory_hostname]['DB_REPL_USER'] }};
           CREATE ROLE {{ hostvars[inventory_hostname]['DB_REPL_USER'] }} WITH REPLICATION LOGIN PASSWORD '{{ hostvars[inventory_hostname]['DB_REPL_PASSWORD'] }}';
-          CREATE TABLE IF NOT EXISTS phone_data (id SERIAL PRIMARY KEY, phone_number VARCHAR(18) NOT NULL);
-          CREATE TABLE IF NOT EXISTS email_data (id SERIAL PRIMARY KEY, email VARCHAR(255) NOT NULL);
+          CREATE TABLE IF NOT EXISTS phone_table (id SERIAL PRIMARY KEY, phone VARCHAR(18) NOT NULL);
+          CREATE TABLE IF NOT EXISTS email_table (id SERIAL PRIMARY KEY, email VARCHAR(255) NOT NULL);
         EOSQL
       become_user: postgres
       become: yes
