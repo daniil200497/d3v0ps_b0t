@@ -1,0 +1,34 @@
+all:
+  vars:
+    DB_REPL_USER: root #change
+    DB_REPL_PASSWORD: debian #change
+
+    POSTGRES_VERSION: 15
+  hosts:
+
+    host01:
+      ansible_host: 192.168.182.160 #change
+      ansible_user: root
+      ansible_ssh_pass: debian #change
+      dir: /debian1/ansible #change user
+
+      github_repo: https://github.com/AndreyEhrlich/DevOps_Telegram_Bot.git #change
+
+      TOKEN: 6714647692:AAHH_KO07830ykodgVfX4IbDRJAis9ABcYU
+
+      RM_HOST: 192.168.182.160 #change
+      RM_PORT: 22
+      RM_USER: root
+      DB_HOST: 192.168.182.160 #change
+      RM_PASSWORD: debian #change
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_PORT: 5432
+      DB_DATABASE: phone_email_database
+      DB_REPL_PORT: 5432
+      DB_REPL_HOST: 192.168.182.161 #change
+    host02:
+      ansible_host: 192.168.182.161 #change
+      ansible_user: root
+      ansible_ssh_pass: debian #change
+      DB_HOST: 192.168.182.160 #change
